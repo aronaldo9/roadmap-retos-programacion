@@ -1,0 +1,1 @@
+let my_new_number = my_number;
