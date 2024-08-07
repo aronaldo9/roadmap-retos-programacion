@@ -133,4 +133,26 @@ function hello_javascript() {
 }
 
 hello_javascript();
-console.log(local_var); // ReferenceError: local_var is not defined
+// console.log(local_var); // ReferenceError: local_var is not defined
+
+// DIFICULTAD EXTRA
+function print_numbers(text1, text2) {
+  let count = 0;
+  for (let i = 1; i <= 100; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log(`${text1} ${text2}`);
+    } else if (i % 3 === 0) {
+      console.log(text1);
+    } else if (i % 5 === 0) {
+      console.log(text2);
+    } else {
+      console.log(i);
+      count++;
+    }
+  }
+  return count;
+}
+
+// Llamada a la función con dos cadenas de texto
+let count = print_numbers("Fizz", "Buzz");
+console.log(`Se imprimieron números en lugar de texto ${count} veces`);
