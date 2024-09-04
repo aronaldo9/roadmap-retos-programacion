@@ -132,7 +132,7 @@ function check(word1, word2) {
     }`
   );
 
-  // Isogramas
+  // Isogramas (sencillo)
   console.log(
     `¿${word1} es un isograma? ${
       word1.length === new Set(word1.split("")).size
@@ -143,7 +143,35 @@ function check(word1, word2) {
       word2.length === new Set(word2.split("")).size
     }`
   );
+
+  // Isogramas (completo)
+  function isogram(word) {
+    const wordDict = {};
+
+    // Construir un objeto con el conteo de cada carácter
+    for (let character of word) {
+      wordDict[character] = (wordDict[character] || 0) + 1;
+    }
+
+    // Obtener los valores de ocurrencia de cada carácter
+    const values = Object.values(wordDict);
+    const isogramLen = values[0];
+
+    // Verificar si todas las ocurrencias son iguales
+    for (let wordCount of values) {
+      if (wordCount !== isogramLen) {
+        return false; // Si no son iguales, no es un isograma
+      }
+    }
+
+    return true; // Si todas son iguales, es un isograma
+  }
+
+  // Ejemplo de uso con las palabras pasadas como argumentos
+  console.log(`¿${word1} es un isograma?: ${isogram(word1)}`);
+  console.log(`¿${word2} es un isograma?: ${isogram(word2)}`);
 }
 
-check("radar", "perno");
+// Llamada a la función con dos palabras
+check("radar", "pythonpython");
 // check("roma", "amor");
