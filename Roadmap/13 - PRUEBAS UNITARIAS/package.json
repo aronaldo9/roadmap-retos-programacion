@@ -1,0 +1,16 @@
+{
+  "name": "13---pruebas-unitarias",
+  "version": "1.0.0",
+  "main": "aaronpf.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "jest": "^30.1.1"
+  }
+}
